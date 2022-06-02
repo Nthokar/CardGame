@@ -22,24 +22,7 @@ namespace Assets.code
 
         //public static Card GetRandomCard()
         //{
-        //    return new Card()
-        //    {
-        //        Discription = "Test",
-        //        LeftChoise= new Choise()
-        //        {
-        //            CommunityInfluence = -2,
-        //            EmploeeInfluence = -2,
-        //            GovernmentInfluence = -2,
-        //            BalanceInfluence = - Math.Abs(Player.Balance),
-        //        },
-        //        RightChoise= new Choise()
-        //        {
-        //            CommunityInfluence = 2,
-        //            EmploeeInfluence = 2,
-        //            GovernmentInfluence = 2,
-        //            BalanceInfluence = -200,
-        //        }
-        //    };
+        //    return 
         //}
 
         private static HashSet<Card> storage = new HashSet<Card>()
@@ -238,8 +221,8 @@ namespace Assets.code
                 Discription = "В вашем городе наступила аномальная жара и ваши сотрудники попросили установить кондиционеры",
                 RightChoise = new Choise()
                 {
-                    CommunityInfluence = 1,
-                    EmploeeInfluence = 0,
+                    CommunityInfluence = 0,
+                    EmploeeInfluence = 1,
                     GovernmentInfluence = 0,
                     BalanceInfluence = -2000,
 
@@ -249,8 +232,8 @@ namespace Assets.code
                 },
                 LeftChoise = new Choise()
                 {
-                    CommunityInfluence = -2,
-                    EmploeeInfluence = 0,
+                    CommunityInfluence = 0,
+                    EmploeeInfluence = -2,
                     GovernmentInfluence = 0,
                     BalanceInfluence = 0,
 
@@ -259,7 +242,7 @@ namespace Assets.code
                   }
                },
 
-            new Card()
+            new Card() //123
             {
                 Discription = "Ваш менеджер по безопасности начал жаловатся на маленькую зарплату",
                 LeftChoise = new Choise()
@@ -311,33 +294,6 @@ namespace Assets.code
                     {
                         Procent = -0.15f,
                     },
-
-                    Description= "Согласиться",
-
-
-                  }
-               },
-
-            new Card()
-            {
-                Discription = "Поступило предложение осуществить проверку безопастности баз данных",
-                LeftChoise = new Choise()
-                {
-                    CommunityInfluence = -1,
-                    EmploeeInfluence = 0,
-                    GovernmentInfluence = 0,
-                    BalanceInfluence = 0,
-
-                    Description = "Отказаться",
-
-
-                },
-                RightChoise = new Choise()
-                {
-                    CommunityInfluence = 1,
-                    EmploeeInfluence = 0,
-                    GovernmentInfluence = 0,
-                    BalanceInfluence = 200,
 
                     Description= "Согласиться",
 

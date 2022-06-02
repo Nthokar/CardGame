@@ -80,6 +80,8 @@ namespace Assets.code
             float result = 0;
             foreach (Tax tax in taxes)
             {
+                if (tax.TurnDuration == null)
+                    result += tax.Procent;
                 if (tax.TurnDuration > 0)
                     result += tax.Procent;
             }
