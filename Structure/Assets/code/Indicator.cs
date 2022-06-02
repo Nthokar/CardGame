@@ -12,11 +12,11 @@ namespace Assets.code
 {
     public class Indicator :  MonoBehaviour
     {
-        Image scaleBar;
-        [SerializeField]
-        Color DecreaseColor;
-        [SerializeField]
-        Color IncreaseColor;
+        public Image scaleBar;
+        public Image changeIndicator;
+        public Color DecreaseColor;
+        public Color IncreaseColor;
+
         public float maxPoints = 10f;
         
         [SerializeField]
@@ -54,7 +54,6 @@ namespace Assets.code
 
         public void Awake()
         {
-            scaleBar = GetComponentInChildren<Image>();
             //scaleBar.fillAmount = currentPoints / maxPoints;
         }
 
@@ -90,6 +89,15 @@ namespace Assets.code
                 yield return null;
             }
             scaleBar.color = Color.white;
+        }
+
+        public IEnumerator ChangeIndicatorAnimation()
+        {
+            for(float i = 0; i < 0.4; i +=Time.deltaTime)
+            {
+                changeIndicator.color = Color.Lerp(changeIndicator.color, Color.white, Time.deltaTime);
+                yield return null;
+            }
         }
 
         public void PlayDecreaseAnimation()

@@ -19,6 +19,17 @@ namespace Assets.code
         public static EmploeeRelationship emploee = new EmploeeRelationship();
         public static GouvermentRelationship gouverment = new GouvermentRelationship();
 
+        public static void SetDefault()
+        {
+            Balance = 1000;
+            MoneyPerTurn = 100;
+            taxes = new List<Tax>();
+            OnDataChange = null;
+            community = new CommunityRelationship();
+            emploee = new EmploeeRelationship();
+            gouverment = new GouvermentRelationship();
+
+        }
         public static void Recount(Choise choise)
         {
             if (choise == null) return;

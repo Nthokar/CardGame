@@ -123,7 +123,7 @@ namespace Assets.code
 
         public void LoadSetingsScene()
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
     }
 }

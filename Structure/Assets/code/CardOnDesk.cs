@@ -15,7 +15,8 @@ namespace Assets.code
         public Card Card;
         public GameObject Template;
         public GameObject Parent;
-        public GameObject GameManager;
+        public GameManager GameManager;
+        public IndicatorsManager IndicatorManager;
         public GameObject instance;
 
 
@@ -25,7 +26,8 @@ namespace Assets.code
 
         public void Start()
         {
-            GameManager = GameObject.Find("GameManager");
+            GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+            IndicatorManager = GameManager.indicatorsManager;
             text.text = Card.Discription;
         }
 
@@ -34,6 +36,7 @@ namespace Assets.code
             if (!isAnimationPlaying && Input.mousePosition.x < 660)
             {
                 StartCoroutine(RotationAnimation(20));
+                IndicatorManager.PlayChangeIndicator(Card.LeftChoise);
                 ChangeDescriptionText(Card.LeftChoise);
                 if (Input.GetMouseButtonDown(0))
                     OnLeft();
@@ -41,6 +44,7 @@ namespace Assets.code
             if (!isAnimationPlaying && Input.mousePosition.x > 1260)
             {
                 StartCoroutine(RotationAnimation(-20));
+                IndicatorManager.PlayChangeIndicator(Card.RightChoise);
                 ChangeDescriptionText(Card.RightChoise);
                 if (Input.GetMouseButtonDown(0))
                     OnRight();
@@ -48,6 +52,7 @@ namespace Assets.code
             if (!isAnimationPlaying && Input.mousePosition.x < 1260 && Input.mousePosition.x > 660)
             {
                 StartCoroutine(RotationAnimation(0));
+                IndicatorManager.PlayChangeIndicator(null);
                 ChangeDescriptionText(null);
             }
         }
@@ -116,7 +121,7 @@ namespace Assets.code
 
         public float EasingSquare(float x) { return x*x*x*x*x; }
 
-        public void OnLeft() { GameManager.GetComponent<GameManager>().TurnEnd(Card.LeftChoise); }
-        public void OnRight() { GameManager.GetComponent<GameManager>().TurnEnd(Card.RightChoise); }
+        public void OnLeft() { GameManager.TurnEnd(Card.LeftChoise); }
+        public void OnRight() { GameManager.TurnEnd(Card.RightChoise); }
     }
 }
