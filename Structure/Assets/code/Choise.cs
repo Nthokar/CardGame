@@ -1,4 +1,6 @@
-﻿namespace Assets.code
+﻿using System;
+
+namespace Assets.code
 {
     public class Choise
     {

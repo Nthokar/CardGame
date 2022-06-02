@@ -8,15 +8,45 @@ namespace Assets.code
         Image icon;
         Button buyButton;
         public string Descriprion;
+        public Text priceText;
+        public GameObject instance;
 
-        public int Cost;
-        public int MoneyPerTurn;
+        [SerializeField]
+        public int Price;
+        [SerializeField]
+        private int _priceIncreaseValue;
+        [SerializeField]
+        private float _priceIncreaseProcent;
 
+        [SerializeField]
+        public int MoneyPerTurnValue;
+        [SerializeField]
+        public float MoneyPerTurnProcent;
+
+        public void Start()
+        {
+            UpdatePrice();
+        }
         public void OnBuy()
         {
-            Player.MoneyPerTurn += MoneyPerTurn;
-            Player.Balance -= Cost;
+            if (Player.Balance < Price) return;
+            Player.MoneyPerTurn += MoneyPerTurnValue;
+            if (MoneyPerTurnProcent != 0) Player.taxes.Add(new Tax((float) -MoneyPerTurnProcent, 0, 0));
+            Player.Balance -= (int) Price;
             GameObject.Find("IndicatorsManager").GetComponent<IndicatorsManager>().UpdateData();
+            IncreasePrice();
+            UpdatePrice();
+        }
+
+        private void IncreasePrice()
+        {
+            Price += _priceIncreaseValue;
+            Price = (int) (Price * (1 + _priceIncreaseProcent)); 
+        }
+
+        private void UpdatePrice()
+        {
+            priceText.text = Price.ToString() + '$';
         }
     }
 }
