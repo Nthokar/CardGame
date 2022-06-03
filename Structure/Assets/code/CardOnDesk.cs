@@ -120,14 +120,14 @@ namespace Assets.code
 
         public void OnLeft() { 
             GameManager.TurnEnd(card.LeftChoise);
-            if (card.LeftChoise.isUnique)
+            if (card.LeftChoise != null && card.LeftChoise.isUnique)
                 CardsStorage.DeleteUniqueCard(card);
 
         }
         public void OnRight()
         { 
             GameManager.TurnEnd(card.RightChoise);
-            if (card.LeftChoise.isUnique)
+            if (card.RightChoise != null && card.RightChoise.isUnique)
                 CardsStorage.DeleteUniqueCard(card);
         }
     }

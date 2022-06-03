@@ -12,16 +12,14 @@ namespace Assets.code
             System.Random rnd = new System.Random();
             if (cards.Count > 0)
             {
-                Debug.Log("Cards in storage: " + cards.Count);
-                int rndIndex = rnd.Next(0, storage.Count);
+                int rndIndex = rnd.Next(0, cards.Count);
                 Card card = cards[rndIndex];
-                if (!GameManager.CardQueue.Contains(card))
+                while (!GameManager.CardQueue.Contains(card))
                 {
-                    GameManager.CardQueue.Enqueue(card);
-                    return cards[rndIndex];
+                    rndIndex = rnd.Next(0, cards.Count);
+                    card = cards[rndIndex];
                 }
-                else
-                    return GetRandomCard();
+                return card;
             }
             Debug.Log("Storage have no cards");
             throw new Exception("Storage have no cards");

@@ -71,7 +71,7 @@ namespace Assets.code
 
         private static void DequeueOldCards()
         {
-            if (CardQueue.Count > 0)
+            if (CardQueue.Count > 8)
                 CardQueue.Dequeue();
         }
 
