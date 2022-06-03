@@ -33,7 +33,7 @@ namespace Assets.code
             emploee.ChangeValue(choise.EmploeeInfluence);
             gouverment.ChangeValue(choise.GovernmentInfluence);
             if (choise.tax != null)
-                taxes.Add(choise.tax);
+                taxes.Add( new Tax(choise.tax) );
             if (choise.fine != null)
                 Balance += (int)(Math.Abs(Balance) * (choise.fine.ProcentFromBalance));
             OnDataChange.Invoke();
@@ -54,7 +54,7 @@ namespace Assets.code
                 if (tax.TurnDuration == null)
                     continue;
                 if (tax.TurnDuration > 0)
-                    result += tax.Value;
+                    result += (int) tax.Value;
             }
             return result;
         }

@@ -12,6 +12,12 @@
             this.Value = value;
             this.TurnDuration = turnDuration;
         }
+        public Tax(Tax tax)
+        {
+            this.Procent = tax.Procent;
+            this.Value = tax.Value;
+            this.TurnDuration = tax.TurnDuration;
+        }
 
         public Tax() { }
     }
