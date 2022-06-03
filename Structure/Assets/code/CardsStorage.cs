@@ -710,8 +710,8 @@ namespace Assets.code
                                     ProcentFromBalance = -0.2f
                                 },
                             }
-                        }
-                    }
+                        },
+                    },
                 }
             },
 
@@ -724,6 +724,7 @@ namespace Assets.code
                     CommunityInfluence = -2,
                     EmploeeInfluence = 1,
                     BalanceInfluence = 0,
+                    isUnique = false,
 
                     Description = "Отказаться",
                 },
@@ -733,6 +734,7 @@ namespace Assets.code
                     CommunityInfluence = 2,
                     EmploeeInfluence = -2,
                     BalanceInfluence = 0,
+                    isUnique = true,
 
                     Description= "Согласиться",
 
@@ -751,7 +753,8 @@ namespace Assets.code
 
                                 tax = new Tax()
                                 {
-                                    Procent = -0.15f
+                                    Procent = 0.15f,
+                                    TurnDuration = null,
                                 }
                             },
                             RightChoise=new Choise()
@@ -763,13 +766,14 @@ namespace Assets.code
 
                                 tax = new Tax()
                                 {
-                                    Procent = -0.15f
+                                    Procent = 0.15f,
+                                    TurnDuration = null,
                                 }
                             },
-                        }
-                     }
-                 }
-              },
+                        },
+                    },
+                }
+            },
 
             new Card()
             {
@@ -780,6 +784,7 @@ namespace Assets.code
                     CommunityInfluence = 0,
                     EmploeeInfluence = -1,
                     BalanceInfluence = 0,
+                    isUnique = false,   
 
                     Description = "Оставить",
                 },
@@ -789,10 +794,12 @@ namespace Assets.code
                     CommunityInfluence = 0,
                     EmploeeInfluence = 2,
                     BalanceInfluence = 0,
+                    isUnique = true,
 
                     tax = new Tax()
                     {
-                        Procent = 0.1f
+                        Procent = -0.1f,
+                        TurnDuration = null
                     },
 
                     Description= "Поменять",
@@ -802,10 +809,10 @@ namespace Assets.code
                         new Card()
                         {
                             Description = "Иногда строгий и агрессивный тимлид заставляет работать продуктивней. Ваша прибыль за ход уменьшилась на 10%",
-                        }
-                     }
-                 }
-              },
+                        },
+                    },
+                }
+            },
 
             new Card()
             {
@@ -824,7 +831,7 @@ namespace Assets.code
                 {
                     GovernmentInfluence = 0,
                     CommunityInfluence = 0,
-                    EmploeeInfluence = 3,
+                    EmploeeInfluence = 4,
                     BalanceInfluence = -10000,
 
                     Description= "Переехать в него за 10.000$",
@@ -837,14 +844,14 @@ namespace Assets.code
 
                             LeftChoise= new Choise()
                             {
-                                GovernmentInfluence = -1,
+                                GovernmentInfluence = -2,
                                 CommunityInfluence = 0,
                                 EmploeeInfluence = 0,
                                 BalanceInfluence = -3000,
                             },
                             RightChoise= new Choise()
                             {
-                                GovernmentInfluence = -1,
+                                GovernmentInfluence = -2,
                                 CommunityInfluence = 0,
                                 EmploeeInfluence = 0,
                                 BalanceInfluence = -3000,
@@ -852,9 +859,9 @@ namespace Assets.code
                         },
 
                         null
-                     }
-                 }
-              },
+                    },
+                }
+            },
 
 
 
