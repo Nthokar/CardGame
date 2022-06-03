@@ -17,8 +17,9 @@ namespace Assets.code
         public Sprite ShopIcon;
         public Sprite CardIcon;
 
-        public Stack<Card> CardStack = new Stack<Card>();
+        public static Queue<Card> CardQueue = new Queue<Card>();
 
+        public static bool isNewGame;
         private static bool isCardOnDesk;
         private static Card card;
 
@@ -27,12 +28,20 @@ namespace Assets.code
         public void Awake()
         {
             GameInitialization();
-            if (!isCardOnDesk)
+            if (!isCardOnDesk || isNewGame)
+            {
                 TurnStart();
+                isNewGame = false;
+            }
             else
                 TurnStart(card);
         }
 
+        public static void RestartGame()
+        {
+            isNewGame = true;
+            CardQueue.Clear();
+        }
         public void GameInitialization()
         {
             Shop = GameObject.Find("ShopWindow");
@@ -46,16 +55,24 @@ namespace Assets.code
         {
             CreateCard(CardsStorage.GetRandomCard());
             CardOnDesk.PlayCreateAnimation();
+            DequeueOldCards();
         }
         public void TurnStart(Card card)
         {
             if (card == null)
-            { 
-                TurnStart();                                                                                        //опасная строка !!!                                                            
+            {
+                TurnStart();
                 return;
             }
             CreateCard(card);
             CardOnDesk.PlayCreateAnimation();
+            DequeueOldCards();
+        }
+
+        private static void DequeueOldCards()
+        {
+            if (CardQueue.Count > 0)
+                CardQueue.Dequeue();
         }
 
         public void TurnEnd(Choise choise)
@@ -78,7 +95,7 @@ namespace Assets.code
             var cardHolder = GameObject.Find("CardHolder");
             var CardGameObj = GameObject.Instantiate(CardTemplate, cardHolder.transform);
             CardOnDesk = CardGameObj.GetComponent<CardOnDesk>();
-            CardOnDesk.GetComponent<CardOnDesk>().Card = card;
+            CardOnDesk.GetComponent<CardOnDesk>().card = card;
             CardOnDesk.transform.SetParent(cardHolder.transform);
             CardOnDesk.instance = CardGameObj;
             isCardOnDesk = true;

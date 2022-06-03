@@ -30,9 +30,9 @@ namespace Assets.code
         }
         public void UpdateData()
         {
-            communitiIndicator.GetComponent<Indicator>().currentPoints = Player.community.GetValue();
-            emploeeiIndicator.GetComponent<Indicator>().currentPoints = Player.emploee.GetValue();
-            gouvermentIndicator.GetComponent<Indicator>().currentPoints = Player.gouverment.GetValue();
+            communitiIndicator.GetComponentInChildren<Indicator>().currentPoints = Player.community.GetValue();
+            emploeeiIndicator.GetComponentInChildren<Indicator>().currentPoints = Player.emploee.GetValue();
+            gouvermentIndicator.GetComponentInChildren<Indicator>().currentPoints = Player.gouverment.GetValue();
             Balance.text = Player.Balance.ToString() + '$';
             MoneyPerTurn.text = '+' + Player.GetMoneyPerTurn().ToString() + "$ per turn";
         }
@@ -40,19 +40,19 @@ namespace Assets.code
         {
             if (choise == null)
             {
-                emploeeiIndicator.GetComponent<Indicator>().changeIndicator.color = new Color(1,1,1,0);
-                gouvermentIndicator.GetComponent<Indicator>().changeIndicator.color = new Color(1, 1, 1, 0);
-                communitiIndicator.GetComponent<Indicator>().changeIndicator.color = new Color(1, 1, 1, 0);
+                emploeeiIndicator.GetComponentInChildren<Indicator>().changeIndicator.color = new Color(1,1,1,0);
+                gouvermentIndicator.GetComponentInChildren<Indicator>().changeIndicator.color = new Color(1, 1, 1, 0);
+                communitiIndicator.GetComponentInChildren<Indicator>().changeIndicator.color = new Color(1, 1, 1, 0);
                 return;
             }
             if (choise.EmploeeInfluence != 0)
-                StartCoroutine(emploeeiIndicator.GetComponent<Indicator>().ChangeIndicatorAnimation());
+                StartCoroutine(emploeeiIndicator.GetComponentInChildren<Indicator>().ChangeIndicatorAnimation());
 
             if (choise.GovernmentInfluence != 0)
-                StartCoroutine(gouvermentIndicator.GetComponent<Indicator>().ChangeIndicatorAnimation());
+                StartCoroutine(gouvermentIndicator.GetComponentInChildren<Indicator>().ChangeIndicatorAnimation());
 
             if (choise.CommunityInfluence != 0)
-                StartCoroutine(communitiIndicator.GetComponent<Indicator>().ChangeIndicatorAnimation());
+                StartCoroutine(communitiIndicator.GetComponentInChildren<Indicator>().ChangeIndicatorAnimation());
         }
     }
 } 
