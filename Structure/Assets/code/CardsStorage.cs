@@ -9,6 +9,7 @@ namespace Assets.code
     {
         public static Card GetRandomCard()
         {
+            Debug.Log(storage.Count);
             System.Random rnd = new System.Random();
             if (cards.Count > 0)
             {

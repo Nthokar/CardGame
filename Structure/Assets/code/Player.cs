@@ -35,7 +35,7 @@ namespace Assets.code
             if (choise.tax != null)
                 taxes.Add(choise.tax);
             if (choise.fine != null)
-                Balance += (int)(Balance * (choise.fine.ProcentFromBalance));
+                Balance += (int)(Math.Abs(Balance) * (choise.fine.ProcentFromBalance));
             OnDataChange.Invoke();
         }
 
