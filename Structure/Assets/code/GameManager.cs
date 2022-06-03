@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -15,8 +16,9 @@ namespace Assets.code
 
         public Sprite ShopIcon;
         public Sprite CardIcon;
-        
-        
+
+        public Stack<Card> CardStack = new Stack<Card>();
+
         private static bool isCardOnDesk;
         private static Card card;
 

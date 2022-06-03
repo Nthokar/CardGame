@@ -11,6 +11,7 @@ namespace Assets.code
         public int GovernmentInfluence;
         public int BalanceInfluence;
 
+        public bool isUnique;
         public Tax tax;
         public Fine fine;
 

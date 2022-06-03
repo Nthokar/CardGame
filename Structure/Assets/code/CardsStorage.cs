@@ -337,9 +337,9 @@ namespace Assets.code
                         {
                             Discription = "Это решение так и не придали огласке, поэтому комьюнити не обратило на это внимания, но сотрудники были очень благодарны",
                         }
-                     }
-                  }
-               },
+                    }
+                }
+            },
 
             new Card()
             {
@@ -522,14 +522,26 @@ namespace Assets.code
             new Card()
             {
                 Discription = "Началась эпидемия \"Корововируса\", правительство просит вас заставить ваших сотрудников прививаться",
+                
                 RightChoise = new Choise()
                 {
                     CommunityInfluence = 1,
                     EmploeeInfluence = 2,
                     GovernmentInfluence = -2,
                     BalanceInfluence = 0,
+                    isUnique = true,
+
+                    fine = new Fine()
+                    {
+                        ProcentFromBalance = -0.1f
+                    },
 
                     Description = "Не заставлять",
+
+                    Cards = new Card[]
+                    {
+
+                    },
                 },
 
                 LeftChoise = new Choise()
@@ -538,6 +550,7 @@ namespace Assets.code
                     EmploeeInfluence = -2,
                     GovernmentInfluence = 2,
                     BalanceInfluence = 0,
+                    isUnique = true,
 
                     Description= "Заставлять",
 

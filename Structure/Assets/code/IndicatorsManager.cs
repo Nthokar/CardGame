@@ -6,7 +6,8 @@ namespace Assets.code
 {
     public class IndicatorsManager : MonoBehaviour
     {
-        public Text text;
+        public Text Balance;
+        public Text MoneyPerTurn;
         public GameObject communitiIndicator;
         public GameObject emploeeiIndicator;
         public GameObject gouvermentIndicator;
@@ -32,7 +33,8 @@ namespace Assets.code
             communitiIndicator.GetComponent<Indicator>().currentPoints = Player.community.GetValue();
             emploeeiIndicator.GetComponent<Indicator>().currentPoints = Player.emploee.GetValue();
             gouvermentIndicator.GetComponent<Indicator>().currentPoints = Player.gouverment.GetValue();
-            text.text = Player.Balance.ToString() + '$';
+            Balance.text = Player.Balance.ToString() + '$';
+            MoneyPerTurn.text = '+' + Player.GetMoneyPerTurn().ToString() + "$ per turn";
         }
         public void PlayChangeIndicator(Choise choise)
         {
