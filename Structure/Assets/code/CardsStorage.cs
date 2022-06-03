@@ -19,6 +19,7 @@ namespace Assets.code
                     rndIndex = rnd.Next(0, cards.Count);
                     card = cards[rndIndex];
                 }
+                GameManager.CardQueue.Enqueue(card);
                 return card;
             }
             Debug.Log("Storage have no cards");
