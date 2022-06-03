@@ -552,7 +552,12 @@ namespace Assets.code
                     CommunityInfluence = 0,
                     EmploeeInfluence = 0,
                     GovernmentInfluence = 1,
-                    BalanceInfluence = -Math.Abs(Player.Balance/5),
+                    BalanceInfluence = 0,
+
+                    fine = new Fine()
+                    {
+                        ProcentFromBalance = -0.2f
+                    },
 
                     Description = "Заплатить 20% от вашей текущей суммы",
 
@@ -577,7 +582,12 @@ namespace Assets.code
                                 CommunityInfluence = -2,
                                 EmploeeInfluence = -1,
                                 GovernmentInfluence = -3,
-                                BalanceInfluence = -Math.Abs(Player.Balance/5),
+                                BalanceInfluence = 0,
+
+                                fine = new Fine()
+                                {
+                                    ProcentFromBalance = -0.2f
+                                },
                             },
 
                             RightChoise = new Choise()
@@ -585,7 +595,12 @@ namespace Assets.code
                                 CommunityInfluence = -2,
                                 EmploeeInfluence = -1,
                                 GovernmentInfluence = -3,
-                                BalanceInfluence = -Math.Abs(Player.Balance/5),
+                                BalanceInfluence = 0,
+
+                                fine = new Fine()
+                                {
+                                    ProcentFromBalance = -0.2f
+                                },
                             }
                         }
                      }

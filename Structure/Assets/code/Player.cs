@@ -34,6 +34,8 @@ namespace Assets.code
             gouverment.ChangeValue(choise.GovernmentInfluence);
             if (choise.tax != null)
                 taxes.Add(choise.tax);
+            if (choise.fine != null)
+                Balance += (int)(Balance * (choise.fine.ProcentFromBalance));
             OnDataChange.Invoke();
         }
 
