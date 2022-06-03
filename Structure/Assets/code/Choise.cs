@@ -4,14 +4,15 @@ namespace Assets.code
 {
     public class Choise
     {
+        public string Description;
+
         public int CommunityInfluence;
         public int EmploeeInfluence;
         public int GovernmentInfluence;
         public int BalanceInfluence;
 
         public Tax tax;
-
-        public string Description;
+        public Fine fine;
 
         public Card[] Cards;
 
@@ -25,6 +26,12 @@ namespace Assets.code
             Random rnd = new Random();
             int rndIndex = rnd.Next(0, Cards.Length);
             return Cards[rndIndex]; 
+        }
+
+        public Choise() { }
+        public Choise(Choise choise)
+        {
+            
         }
     }
 }
