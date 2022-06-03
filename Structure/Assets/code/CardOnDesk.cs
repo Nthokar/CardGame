@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ namespace Assets.code
     {
         public Text text;
         public Text ChoiseText;
-        public Card Card;
+        public Card card;
         public GameObject Template;
         public GameObject Parent;
         public GameManager GameManager;
@@ -24,7 +25,7 @@ namespace Assets.code
         {
             GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
             IndicatorManager = GameManager.indicatorsManager;
-            text.text = Card.Discription;
+            text.text = card.Discription;
         }
 
         private void Update()
@@ -32,16 +33,16 @@ namespace Assets.code
             if (!isAnimationPlaying && Input.mousePosition.x < 660)
             {
                 StartCoroutine(RotationAnimation(20));
-                IndicatorManager.PlayChangeIndicator(Card.LeftChoise);
-                ChangeDescriptionText(Card.LeftChoise);
+                IndicatorManager.PlayChangeIndicator(card.LeftChoise);
+                ChangeDescriptionText(card.LeftChoise);
                 if (Input.GetMouseButtonDown(0))
                     OnLeft();
             }
             if (!isAnimationPlaying && Input.mousePosition.x > 1260)
             {
                 StartCoroutine(RotationAnimation(-20));
-                IndicatorManager.PlayChangeIndicator(Card.RightChoise);
-                ChangeDescriptionText(Card.RightChoise);
+                IndicatorManager.PlayChangeIndicator(card.RightChoise);
+                ChangeDescriptionText(card.RightChoise);
                 if (Input.GetMouseButtonDown(0))
                     OnRight();
             }
@@ -112,12 +113,22 @@ namespace Assets.code
         }
         public CardOnDesk(Card cd)
         {
-            Card = cd;
+            card = cd;
         }
 
         public float EasingSquare(float x) { return x*x*x*x*x; }
 
-        public void OnLeft() { GameManager.TurnEnd(Card.LeftChoise); }
-        public void OnRight() { GameManager.TurnEnd(Card.RightChoise); }
+        public void OnLeft() { 
+            GameManager.TurnEnd(card.LeftChoise);
+            if (card.LeftChoise.isUnique)
+                CardsStorage.DeleteUniqueCard(card);
+
+        }
+        public void OnRight()
+        { 
+            GameManager.TurnEnd(card.RightChoise);
+            if (card.LeftChoise.isUnique)
+                CardsStorage.DeleteUniqueCard(card);
+        }
     }
 }

@@ -41,7 +41,7 @@ namespace Assets.code
 
         public static void GetMoneyByTurn()
         {
-            Balance += (Int32) (MoneyPerTurn * (1f - GetAllTaxesProcent()) ) - GetAllTaxesValues();
+            Balance += (Int32) (MoneyPerTurn * (1f + GetAllTaxesProcent()) ) - GetAllTaxesValues();
             TaxesUpdateDurarion();
             OnDataChange.Invoke();
         }
@@ -88,6 +88,11 @@ namespace Assets.code
                     result += tax.Procent;
             }
             return result;
+        }
+
+        public static int GetMoneyPerTurn()
+        {
+            return (Int32) (MoneyPerTurn * (1f + GetAllTaxesProcent())) - GetAllTaxesValues();
         }
     }
 }
