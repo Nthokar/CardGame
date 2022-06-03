@@ -25,7 +25,7 @@ namespace Assets.code
         {
             GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
             IndicatorManager = GameManager.indicatorsManager;
-            text.text = card.Discription;
+            text.text = card.Description;
         }
 
         private void Update()
