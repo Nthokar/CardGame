@@ -18,6 +18,7 @@ namespace Assets.code
         public void SetPlayerDefault()
         {
             Player.SetDefault();
+            CardsStorage.SetDefault();
             GameManager.RestartGame();
         }
     }

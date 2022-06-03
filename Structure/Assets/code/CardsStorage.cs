@@ -31,6 +31,11 @@ namespace Assets.code
         {
             cards.Remove(uniqueCard);
         }
+        
+        public static void SetDefault()
+        {
+            cards = storage.ToList();
+        }
 
         private static HashSet<Card> storage = new HashSet<Card>()
         {
@@ -332,6 +337,11 @@ namespace Assets.code
                     isUnique = true,
 
                     Description = "Поднять за 5% от денег за ход",
+
+                    tax = new Tax()
+                    {
+                        Procent = -0.05f,
+                    },
 
                     Cards = new Card[]
                     {
