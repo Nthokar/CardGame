@@ -37,7 +37,7 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "Ваш знакомый предприниматель сказал что корпоративы хорошо поднимают \"боевой дух\" сотрудников и предложил вам устроить что-то подобное",
+                Description = "Ваш знакомый предприниматель сказал что корпоративы хорошо поднимают \"боевой дух\" сотрудников и предложил вам устроить что-то подобное",
                 RightChoise = new Choise()
                 {
                     CommunityInfluence = 0,
@@ -52,7 +52,7 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "Вы и ваши сотрудники повеселились от души ",
+                            Description = "Вы и ваши сотрудники повеселились от души ",
                         }
                     }
                 },
@@ -70,7 +70,7 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "Один из сотрудников подслушал ваш разговор, после чего расказал остальным. Ваши сотрудники обиделись на вас",
+                            Description = "Один из сотрудников подслушал ваш разговор, после чего расказал остальным. Ваши сотрудники обиделись на вас",
                         }
                     }
                 }
@@ -78,14 +78,14 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "Новатор предложил начать работать с фрилансерами",
+                Description = "Новатор предложил начать работать с фрилансерами",
                 RightChoise = new Choise()
                 {
                     CommunityInfluence = 1,
                     EmploeeInfluence = 1,
                     GovernmentInfluence = 0,
                     BalanceInfluence = 0,
-                    IsUnique = false,
+                    isUnique = false,
 
                     tax = new Tax()
                     {
@@ -102,7 +102,7 @@ namespace Assets.code
                     EmploeeInfluence = 0,
                     GovernmentInfluence = 0,
                     BalanceInfluence = 0,
-                    IsUnique = false,
+                    isUnique = false,
 
                     Description= "Отказаться",
 
@@ -111,14 +111,14 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "Ваш сотрудник учавствовал в скандале с домогательством",
+                Description = "Ваш сотрудник учавствовал в скандале с домогательством",
                 RightChoise = new Choise()
                 {
                     CommunityInfluence = 2,
                     EmploeeInfluence = 1,
                     GovernmentInfluence = 0,
                     BalanceInfluence = 0,
-                    IsUnique = false,
+                    isUnique = false,
 
                     Description = "Выгнать за 5% от денег за ход",
 
@@ -135,7 +135,7 @@ namespace Assets.code
                     EmploeeInfluence = -1,
                     GovernmentInfluence = -1,
                     BalanceInfluence = 0,
-                    IsUnique = false,
+                    isUnique = false,
 
                     Description= "Проигнорировать",
 
@@ -143,7 +143,7 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "В ходе судебных разбирательств вам выписали штраф в размере 2000 ",
+                            Description = "В ходе судебных разбирательств вам выписали штраф в размере 2000 ",
 
 
                             LeftChoise = new Choise()
@@ -161,14 +161,14 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "Комьюнити жалуется на отсутсвие какого либо удобного способа связи с вашей компанией. В качестве решения вам предложили сделать сайт с круглосуточной поддержкой",
+                Description = "Комьюнити жалуется на отсутсвие какого либо удобного способа связи с вашей компанией. В качестве решения вам предложили сделать сайт с круглосуточной поддержкой",
                 RightChoise = new Choise()
                 {
                     CommunityInfluence = 2,
                     EmploeeInfluence = -1,
                     GovernmentInfluence = 0,
                     BalanceInfluence = -2000,
-                    IsUnique = true,
+                    isUnique = true,
 
                     Description = "Сделать за 2000",
 
@@ -176,7 +176,7 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "Ваши и без того загруженные сотрудники были недовольны",
+                            Description = "Ваши и без того загруженные сотрудники были недовольны",
 
                         }
                     }
@@ -187,7 +187,7 @@ namespace Assets.code
                     EmploeeInfluence = 0,
                     GovernmentInfluence = 0,
                     BalanceInfluence = 0,
-                    IsUnique = false,
+                    isUnique = false,
 
                     Description= "Проигнорировать",
                 }
@@ -195,7 +195,7 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "Вам пришло письмо от правительства. В нем была просьба: \"Запретить вашу продукцию на территории страны конкурента\"",
+                Description = "Вам пришло письмо от правительства. В нем была просьба: \"Запретить вашу продукцию на территории страны конкурента\"",
                 RightChoise = new Choise()
                 {
                     CommunityInfluence = -1,
@@ -217,7 +217,7 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "Комьюнити резко отозвалось о таком решении, а также один из сотрудников был уроженцем из той страны",
+                            Description = "Комьюнити резко отозвалось о таком решении, а также один из сотрудников был уроженцем из той страны",
 
                         }
                     },
@@ -236,7 +236,7 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "Кто-то из сотрудников узнал об этом решении и предал его всеобщей огласке",
+                            Description = "Кто-то из сотрудников узнал об этом решении и предал его всеобщей огласке",
                         }
                     },
                 }
@@ -244,7 +244,7 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "В вашем городе наступила аномальная жара и ваши сотрудники попросили установить кондиционеры",
+                Description = "В вашем городе наступила аномальная жара и ваши сотрудники попросили установить кондиционеры",
                 RightChoise = new Choise()
                 {
                     CommunityInfluence = 0,
@@ -269,7 +269,7 @@ namespace Assets.code
 
             new Card() //123
             {
-                Discription = "Ваш менеджер по безопасности начал жаловатся на маленькую зарплату",
+                Description = "Ваш менеджер по безопасности начал жаловатся на маленькую зарплату",
                 LeftChoise = new Choise()
                 {
                     CommunityInfluence = 0,
@@ -347,10 +347,10 @@ namespace Assets.code
 
                                 tax = new Tax()
                                 {
-                                    Procent = -0.2f
+                                    Procent = -0.2f,
                                     Value = 0,
-                                    TurnDurattion = null
-                                }
+                                    TurnDuration = null
+                                },
 
 
                                 Description = "Поднять остальным за 20% от денег за ход",
@@ -362,7 +362,7 @@ namespace Assets.code
                                 GovernmentInfluence = 0,
                                 BalanceInfluence = 0,
 
-                                Descripton = "Проигнорировать"
+                                Description = "Проигнорировать"
                             }
                         },
                     },
@@ -372,7 +372,7 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "Вам на почту пришло письмо с приглашением на Экспо",
+                Description = "Вам на почту пришло письмо с приглашением на Экспо",
                 LeftChoise = new Choise()
                 {
                     CommunityInfluence = -2,
@@ -389,7 +389,7 @@ namespace Assets.code
                     EmploeeInfluence = 0,
                     GovernmentInfluence = 0,
                     BalanceInfluence = -3000,
-                    isUnique = false
+                    isUnique = false,
 
                     tax = new Tax()
                     {
@@ -410,7 +410,7 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "Один из ваших рекламнных менеджеров предлагает вам последовать тренду и сократить часть сотрудников в пользу людей других этнических групп",
+                Description = "Один из ваших рекламнных менеджеров предлагает вам последовать тренду и сократить часть сотрудников в пользу людей других этнических групп",
                 RightChoise = new Choise()
                 {
                     CommunityInfluence = 2,
@@ -425,41 +425,79 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "Большая часть комьюнити поддержала эту инициативу, но сотрудники были очень недовольны этим решением",
-
-                            Cards = new Card[]
+                            Description = "Большая часть комьюнити поддержала эту инициативу, но сотрудники были очень недовольны этим решением",
+                            LeftChoise = new Choise()
                             {
-                                new Card()
+                                Cards = new Card[]
                                 {
-                                    Description = "К вам пришел один из сокращенных сотрудников и сказал :\" Так! Или вы даёте мне 2000 или я иду в суд!\"",
-                                    RightChoise = new Choise()
+                                    new Card()
                                     {
-                                        CommunityInfluence = 1,
-                                        EmploeeInfluence = 1,
-                                        GovernmentInfluence = 0,
-                                        BalanceInfluence = -2000,
-
-                                        Description = "Выплатить 2000",
-                                    },
-                                    LeftChoise = new Choise()
-                                    {
-                                        CommunityInfluence = -2,
-                                        EmploeeInfluence = -1,
-                                        GovernmentInfluence = -1,
-                                        BalanceInfluence = -5000,
-
-                                        Description = "Не выплачивать",
-
-                                        Cards = new Card[]
+                                        Description = "К вам пришел один из сокращенных сотрудников и сказал :\" Так! Или вы даёте мне 2000 или я иду в суд!\"",
+                                        RightChoise = new Choise()
                                         {
-                                            new Card()
-                                            {
-                                                Description = "Он отсудил у компании 5000 за моральнный ущерб"
-                                            },
+                                            CommunityInfluence = 1,
+                                            EmploeeInfluence = 1,
+                                            GovernmentInfluence = 0,
+                                            BalanceInfluence = -2000,
+
+                                            Description = "Выплатить 2000",
                                         },
-                                    }
+                                        LeftChoise = new Choise()
+                                        {
+                                            CommunityInfluence = -2,
+                                            EmploeeInfluence = -1,
+                                            GovernmentInfluence = -1,
+                                            BalanceInfluence = -5000,
+
+                                            Description = "Не выплачивать",
+
+                                            Cards = new Card[]
+                                            {
+                                                new Card()
+                                                {
+                                                    Description = "Он отсудил у компании 5000 за моральнный ущерб"
+                                                },
+                                            },
+                                        }
+                                    },
                                 },
                             },
+                            RightChoise = new Choise
+                            {
+                                Cards = new Card[]
+                                {
+                                    new Card()
+                                    {
+                                        Description = "К вам пришел один из сокращенных сотрудников и сказал :\" Так! Или вы даёте мне 2000 или я иду в суд!\"",
+                                        RightChoise = new Choise()
+                                        {
+                                            CommunityInfluence = 1,
+                                            EmploeeInfluence = 1,
+                                            GovernmentInfluence = 0,
+                                            BalanceInfluence = -2000,
+
+                                            Description = "Выплатить 2000",
+                                        },
+                                        LeftChoise = new Choise()
+                                        {
+                                            CommunityInfluence = -2,
+                                            EmploeeInfluence = -1,
+                                            GovernmentInfluence = -1,
+                                            BalanceInfluence = -5000,
+
+                                            Description = "Не выплачивать",
+
+                                            Cards = new Card[]
+                                            {
+                                                new Card()
+                                                {
+                                                    Description = "Он отсудил у компании 5000 за моральнный ущерб"
+                                                },
+                                            },
+                                        }
+                                    },
+                                },
+                            }
                         },
                     },
                 },
@@ -477,7 +515,7 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "Это решение так и не придали огласке, поэтому комьюнити не обратило на это внимания, но сотрудники были очень благодарны",
+                            Description = "Это решение так и не придали огласке, поэтому комьюнити не обратило на это внимания, но сотрудники были очень благодарны",
                         },
                     },
                 }
@@ -485,7 +523,7 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "Сотруднику пришла идея устроить турнир в один рабочий день по одной видео игре между всеми желающими",
+                Description = "Сотруднику пришла идея устроить турнир в один рабочий день по одной видео игре между всеми желающими",
                 LeftChoise= new Choise()
                 {
                     Description= "Работать в обычном режиме",
@@ -493,7 +531,7 @@ namespace Assets.code
                     CommunityInfluence= 0,
                     EmploeeInfluence= -1,
                     GovernmentInfluence= 0,
-                    BalanceInfluents = 0,
+                    BalanceInfluence = 0,
 
                     isUnique = false,
                 },
@@ -518,7 +556,7 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "По воле случая именно в этот день в офис пришел инвестор и остался не доволен вашим руководством",
+                            Description = "По воле случая именно в этот день в офис пришел инвестор и остался не доволен вашим руководством",
 
                             LeftChoise = new Choise()
                             {
@@ -539,7 +577,7 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "Одна из компаний по установке средств безопасности предложила вам установить камеры видеонаблюдения",
+                Description = "Одна из компаний по установке средств безопасности предложила вам установить камеры видеонаблюдения",
                 LeftChoise = new Choise()
                 {
                     GovernmentInfluence = 0,
@@ -553,7 +591,7 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "Ночью к вам пробрался вор и украл оборудования на 5000",
+                            Description = "Ночью к вам пробрался вор и украл оборудования на 5000",
 
                             LeftChoise= new Choise()
                             {
@@ -586,7 +624,7 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "Началась эпидемия \"Корововируса\", правительство просит вас заставить ваших сотрудников прививаться",
+                Description = "Началась эпидемия \"Корововируса\", правительство просит вас заставить ваших сотрудников прививаться",
 
                 RightChoise = new Choise()
                 {
@@ -614,7 +652,7 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "Пришло время оплатить налоги",
+                Description = "Пришло время оплатить налоги",
                 RightChoise = new Choise()
                 {
                     CommunityInfluence = 0,
@@ -645,7 +683,7 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "Еще чуть-чуть и вас бы отправили в тюрьму, но вам повезло отделаться лишь упадком репутации в лице вашего государства и комьюнити. Кхм, кстати, налог все равно прийдется заплатить",
+                            Description = "Еще чуть-чуть и вас бы отправили в тюрьму, но вам повезло отделаться лишь упадком репутации в лице вашего государства и комьюнити. Кхм, кстати, налог все равно прийдется заплатить",
 
                             LeftChoise = new Choise()
                             {
@@ -679,7 +717,7 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "Вам пришло письмо на почту  от известной киностудии с предложением снять сериал об айти компании у вас в офисе",
+                Description = "Вам пришло письмо на почту  от известной киностудии с предложением снять сериал об айти компании у вас в офисе",
                 LeftChoise = new Choise()
                 {
                     GovernmentInfluence = 0,
@@ -702,7 +740,7 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "Сериал \"зашел\" публике из за чего ваши доходы выросли на 15%",
+                            Description = "Сериал \"зашел\" публике из за чего ваши доходы выросли на 15%",
 
                             LeftChoise=new Choise()
                             {
@@ -735,7 +773,7 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "Ваши сотрудники жалуются на агрессиивное поведение тимлида",
+                Description = "Ваши сотрудники жалуются на агрессиивное поведение тимлида",
                 LeftChoise = new Choise()
                 {
                     GovernmentInfluence = 0,
@@ -763,7 +801,7 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "Иногда строгий и агрессивный тимлид заставляет работать продуктивней. Ваша прибыль за ход уменьшилась на 10%",
+                            Description = "Иногда строгий и агрессивный тимлид заставляет работать продуктивней. Ваша прибыль за ход уменьшилась на 10%",
                         }
                      }
                  }
@@ -771,7 +809,7 @@ namespace Assets.code
 
             new Card()
             {
-                Discription = "В вашем офисе кончаются места для сотрудников. Во время поиска нового помещения вы наткнулись на крутой и относительно дешевый офис, но от сомнительного человека.",
+                Description = "В вашем офисе кончаются места для сотрудников. Во время поиска нового помещения вы наткнулись на крутой и относительно дешевый офис, но от сомнительного человека.",
                 LeftChoise = new Choise()
                 {
                     GovernmentInfluence = 0,
@@ -795,7 +833,7 @@ namespace Assets.code
                     {
                         new Card()
                         {
-                            Discription = "Как оказалось в офисе была незаконная перепланировка из за чего вым пришлось пройти через огромную бумажную волокиту, а так-же заплатить еще 3000",
+                            Description = "Как оказалось в офисе была незаконная перепланировка из за чего вым пришлось пройти через огромную бумажную волокиту, а так-же заплатить еще 3000",
 
                             LeftChoise= new Choise()
                             {

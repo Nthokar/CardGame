@@ -60,6 +60,7 @@
     <Compile Include="Assets\code\Upgrade.cs" />
     <Compile Include="Assets\code\Scale.cs" />
     <Compile Include="Assets\code\Tax.cs" />
+    <Compile Include="Assets\code\Toggle.cs" />
     <Compile Include="Assets\code\CardsStorage.cs" />
     <Compile Include="Assets\code\Player.cs" />
     <Compile Include="Assets\code\ima.cs" />
@@ -74,7 +75,6 @@
     <Compile Include="Assets\code\Indicator.cs" />
     <Compile Include="Assets\code\GameManager.cs" />
     <Compile Include="Assets\code\CommunityRelationship.cs" />
-    <Compile Include="Assets\code\Toggle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

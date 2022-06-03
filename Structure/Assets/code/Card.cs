@@ -3,13 +3,13 @@
     public class Card
     {
 
-        public string Discription;
+        public string Description;
         public Choise LeftChoise;
         public Choise RightChoise;
 
         public Card(Card card)
         {
-            Discription = card.Discription;
+            Description = card.Description;
             LeftChoise = card.LeftChoise;
             RightChoise = card.RightChoise;
         }
