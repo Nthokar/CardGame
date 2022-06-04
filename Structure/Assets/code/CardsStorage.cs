@@ -31,7 +31,7 @@ namespace Assets.code
         {
             cards.Remove(uniqueCard);
         }
-        
+
         public static void SetDefault()
         {
             cards = storage.ToList();
@@ -794,7 +794,7 @@ namespace Assets.code
                     CommunityInfluence = 0,
                     EmploeeInfluence = -1,
                     BalanceInfluence = 0,
-                    isUnique = false,   
+                    isUnique = false,
 
                     Description = "Оставить",
                 },
@@ -873,10 +873,209 @@ namespace Assets.code
                 }
             },
 
+            new Card()
+            {
+                Description = "Ваш разработчик написал код которым невозможно было пользоваться. Это не первый его прокол, но он обещает что исправит и такого больше не повторится",
+                RightChoise = new Choise()
+                {
+                    GovernmentInfluence = 0,
+                    CommunityInfluence = 0,
+                    EmploeeInfluence = 1,
+                    BalanceInfluence = 0,
 
+                    Description = "Разрешить исправить",
+
+                    Cards = new Card[]
+                    {
+                        new Card ()
+                        {
+                            Description = "По  итогу он испортил код еще сильней и его все равно пришлось выгнать",
+                            GovernmentInfluence = 0,
+                            CommunityInfluence = 0,
+                            EmploeeInfluence = -2,
+                            BalanceInfluence = 0,
+                        },
+
+                        null
+
+                    },
+                },
+                LeftChoise = new Choise()
+                {
+                    GovernmentInfluence = 0,
+                    CommunityInfluence = -2,
+                    EmploeeInfluence = -1,
+                    BalanceInfluence = 0,
+
+                    Description = "Выгнать",
+
+                    Cards = new Card[]
+                    {
+                        new Card ()
+                        {
+                            Description = "После того как вы его выгнали он начал писать плохие отзывы на форумах",
+                            GovernmentInfluence = 0,
+                            CommunityInfluence = 0,
+                            EmploeeInfluence = -2,
+                            BalanceInfluence = 0,
+                        },
+                    },
+                }
+            },
+
+            new Card()
+            {
+                Description = "Один из ваших заказчиков остался недоволен продуктом и просит переделать",
+                RightChoise = new Choise()
+                {
+                    GovernmentInfluence = 0,
+                    CommunityInfluence = 2,
+                    EmploeeInfluence = -1,
+                    BalanceInfluence = 0,
+
+                    Description = "Переделать бесплатно",
+
+                    Cards = new Card[]
+                    {
+                        new Card ()
+                        {
+                            Description = "Заказчик был очень доволен и оставил хороший отзыв",
+                        },
+                    },
+                },
+                LeftChoise = new Choise()
+                {
+                    GovernmentInfluence = 0,
+                    CommunityInfluence = -2,
+                    EmploeeInfluence = 0,
+                    BalanceInfluence = 0,
+
+                    Description = "Попросить 1000 за исправление",
+
+                    Cards = new Card[]
+                    {
+                        new Card ()
+                        {
+                            Description = "Он отказался платить за исправление и написал множество жалоб на форумах",
+                        },
+                    },
+                }
+            },
+
+            new Card()
+            {
+                Description = "Ваш друг, а по совместительству владелец другой айти компании предложил сделать общий продукт",
+                RightChoise = new Choise()
+                {
+                    GovernmentInfluence = 0,
+                    CommunityInfluence = -1,
+                    EmploeeInfluence = -2,
+                    BalanceInfluence = 0,
+
+                    Description = "Сделать за 3000",
+
+                    Cards = new Card[]
+                    {
+                        new Card ()
+                        {
+                            Description = "Продукт оказался провальным и ни чуть себя не окупил",
+                        },
+                    },
+                },
+                LeftChoise = new Choise()
+                {
+                    GovernmentInfluence = 0,
+                    CommunityInfluence = -1,
+                    EmploeeInfluence = 1,
+                    BalanceInfluence = 0,
+
+                    Description = "Отказаться",
+                }
+            },
+        
 
 };
 
         private static List<Card> cards = storage.ToList();
+
+        private static Card[] TutorialCards = new Card[]()
+        {
+            new Card()
+            {
+            Description = "Привет ты директор IT компании",
+                RightChoise = new Choise()
+                {
+                    Description = "Далее",
+                    isUnique = true,
+                },
+                LeftChoise = new Choise()
+                {
+                    Description = "Далее",
+                    isUnique = true,
+                }
+
+            },
+            new Card()
+            {
+                Description = "По ходу игры будут появляться карточки с условиями и тебе надо будет выбрать один из двух ответов, от них будет зависить какая шкала измениться.",
+                    RightChoise = new Choise()
+                    {
+                        Description = "Далее",
+                        isUnique = true,
+                    },
+                    LeftChoise = new Choise()
+                    {
+                        Description = "Далее",
+                        isUnique = true,
+                    }
+
+            },
+            new Card()
+            {
+            Description = "В игре три шкалы: Правительство, Сотрудники, Комьюнити, если одна из них упадет до нуля, то ты проиграл",
+                    RightChoise = new Choise()
+                    {
+                        Description = "Далее",
+                        isUnique = true,
+                    },
+                    LeftChoise = new Choise()
+                    {
+                        Description = "Далее",
+                        isUnique = true,
+                    }
+
+            },
+            new Card()
+            {
+                Description = "Также у тебя есть деньги на которые ты можешь покупать улучшения в магазине. Их отсутствие тоже приведет к поражению",
+                RightChoise = new Choise()
+                {
+                    Description = "Далее",
+                    isUnique = true,
+                },
+                LeftChoise = new Choise()
+                {
+                    Description = "Далее",
+                    isUnique = true,
+                }
+
+            },
+            new Card()
+            {
+                Description = "Удачной игры!",
+                RightChoise = new Choise()
+                {
+                    Description = "Перейти к игре",
+                    isUnique = true,
+                },
+                LeftChoise = new Choise()
+                {
+                    Description = "Перейти к игре",
+                    isUnique = true,
+                }
+
+            },
+            
+        };  
     }
 }
