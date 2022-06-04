@@ -1019,6 +1019,10 @@ namespace Assets.code
 
         private static List<Card> cards = storage.ToList();
 
+        private static Card[] EndingCards = new Card[]
+        {
+
+        };
         private static Card[] TutorialCards = new Card[]
         {
             new Card()
