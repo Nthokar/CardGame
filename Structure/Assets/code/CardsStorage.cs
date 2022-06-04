@@ -15,7 +15,7 @@ namespace Assets.code
             {
                 int rndIndex = rnd.Next(0, cards.Count);
                 Card card = cards[rndIndex];
-                while (GameManager.CardQueue.Contains(card))
+                while (GameManager.CardQueue.Contains(card)) //условие на карты за которые нельзя заплатить
                 {
                     rndIndex = rnd.Next(0, cards.Count);
                     card = cards[rndIndex];

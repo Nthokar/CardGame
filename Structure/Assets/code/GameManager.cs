@@ -19,7 +19,9 @@ namespace Assets.code
 
         public static Queue<Card> CardQueue = new Queue<Card>();
 
+        public static bool isSurviveMode;
         public static bool isNewGame;
+        public static bool isLose;
         private static bool isCardOnDesk;
         private static Card card;
 
@@ -37,9 +39,11 @@ namespace Assets.code
                 TurnStart(card);
         }
 
-        public static void RestartGame()
+        public static void RestartGame(bool _isSurviveMode)
         {
+            isSurviveMode = _isSurviveMode;
             isNewGame = true;
+            isLose = false;
             CardQueue.Clear();
         }
         public void GameInitialization()
@@ -47,18 +51,24 @@ namespace Assets.code
             Shop = GameObject.Find("ShopWindow");
             CardHolder = GameObject.Find("CardHolder");
             indicatorsManager = GameObject.Find("IndicatorsManager").GetComponent<IndicatorsManager>();
+            if (isSurviveMode)
+                Player.OnLose = () => { isLose = true; };
+            else
+                Player.OnLose = () => { return; };
             DeactivateShop();
             Player.OnDataChange = indicatorsManager.UpdateData;
         }
 
         public void TurnStart()
         {
+            if (isLose) return;
             CreateCard(CardsStorage.GetRandomCard());
             CardOnDesk.PlayCreateAnimation();
             DequeueOldCards();
         }
         public void TurnStart(Card card)
         {
+            if (isLose) return;
             if (card == null)
             {
                 TurnStart();

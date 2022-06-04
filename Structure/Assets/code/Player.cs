@@ -4,11 +4,26 @@ namespace Assets.code
 {
     public static class Player
     {
-        public static int Balance = 1000;
-        public static int MoneyPerTurn = 100;
+        private static int _balance = 1000;
+        public static int Balance
+        {
+            get { return _balance; }
+            set {
+                _balance = value;
+                if (_balance < 0)
+                    OnLose.Invoke();
+            }
+        }
+        private static int _moneyPerTurn = 100;
+        public static int MoneyPerTurn
+        {
+            get { return _moneyPerTurn; }
+            set { _moneyPerTurn = value; }
+        }
         public static List<Tax> taxes = new List<Tax>();
 
         public static Action OnDataChange;
+        public static Action OnLose;
 
         public static CommunityRelationship community = new CommunityRelationship();
         public static EmploeeRelationship emploee = new EmploeeRelationship();
