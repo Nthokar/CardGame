@@ -31,7 +31,7 @@ namespace Assets.code
         {
             if (Player.Balance < Price) return;
             Player.MoneyPerTurn += MoneyPerTurnValue;
-            if (MoneyPerTurnProcent != 0) Player.taxes.Add(new Tax((float) -MoneyPerTurnProcent, 0, 0));
+            if (MoneyPerTurnProcent != 0) Player.taxes.Add(new Tax((float) MoneyPerTurnProcent, 0, null));
             Player.Balance -= (int) Price;
             GameObject.Find("IndicatorsManager").GetComponent<IndicatorsManager>().UpdateData();
             IncreasePrice();

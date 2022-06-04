@@ -6,7 +6,7 @@
         public int Value;
         public int? TurnDuration;
 
-        public Tax(float procent, int value, int turnDuration)
+        public Tax(float procent, int value, int? turnDuration)
         {
             this.Procent = procent;
             this.Value = value;
