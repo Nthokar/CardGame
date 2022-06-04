@@ -890,10 +890,20 @@ namespace Assets.code
                         new Card ()
                         {
                             Description = "По  итогу он испортил код еще сильней и его все равно пришлось выгнать",
-                            GovernmentInfluence = 0,
-                            CommunityInfluence = 0,
-                            EmploeeInfluence = -2,
-                            BalanceInfluence = 0,
+                            LeftChoise= new Choise()
+                            {
+                                GovernmentInfluence = 0,
+                                CommunityInfluence = 0,
+                                EmploeeInfluence = -2,
+                                BalanceInfluence = 0,
+                            },
+                            RightChoise= new Choise()
+                            {
+                                GovernmentInfluence = 0,
+                                CommunityInfluence = 0,
+                                EmploeeInfluence = -2,
+                                BalanceInfluence = 0,
+                            },
                         },
 
                         null
@@ -914,10 +924,21 @@ namespace Assets.code
                         new Card ()
                         {
                             Description = "После того как вы его выгнали он начал писать плохие отзывы на форумах",
-                            GovernmentInfluence = 0,
-                            CommunityInfluence = 0,
-                            EmploeeInfluence = -2,
-                            BalanceInfluence = 0,
+
+                            LeftChoise= new Choise()
+                            {
+                                GovernmentInfluence = 0,
+                                CommunityInfluence = -2,
+                                EmploeeInfluence = 0,
+                                BalanceInfluence = 0,
+                            },
+                            RightChoise = new Choise()
+                            {
+                                GovernmentInfluence = 0,
+                                CommunityInfluence = -2,
+                                EmploeeInfluence = 0,
+                                BalanceInfluence = 0,
+                            }
                         },
                     },
                 }
@@ -998,11 +1019,11 @@ namespace Assets.code
 
         private static List<Card> cards = storage.ToList();
 
-        private static Card[] TutorialCards = new Card[]()
+        private static Card[] TutorialCards = new Card[]
         {
             new Card()
             {
-            Description = "Привет ты директор IT компании",
+                Description = "Привет ты директор IT компании",
                 RightChoise = new Choise()
                 {
                     Description = "Далее",
