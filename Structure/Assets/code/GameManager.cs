@@ -9,6 +9,7 @@ namespace Assets.code
     {
         public IndicatorsManager indicatorsManager;
         public GameObject Shop;
+        public GameObject Theory;
         public CardOnDesk CardOnDesk;
         public GameObject CardHolder;
         public GameObject CardTemplate;
@@ -49,6 +50,7 @@ namespace Assets.code
         public void GameInitialization()
         {
             Shop = GameObject.Find("ShopWindow");
+            Theory = GameObject.Find("TheoryWindow");
             CardHolder = GameObject.Find("CardHolder");
             indicatorsManager = GameObject.Find("IndicatorsManager").GetComponent<IndicatorsManager>();
             if (isSurviveMode)
@@ -56,6 +58,7 @@ namespace Assets.code
             else
                 Player.OnLose = () => { return; };
             DeactivateShop();
+            DeactivateTheory();
             Player.OnDataChange = indicatorsManager.UpdateData;
         }
 
@@ -129,6 +132,20 @@ namespace Assets.code
             CardHolder.SetActive(true);
             Shop.SetActive(false);
         }
+        
+        public void ActivateTheory()
+        {
+            Shop.SetActive(false);
+            CardHolder.SetActive(false);
+            Theory.SetActive(true);
+        }
+
+        public void DeactivateTheory()
+        {
+            CardHolder.SetActive(true);
+            Theory.SetActive(false);
+        }
+
 
         public void ShopChangeState()
         {
