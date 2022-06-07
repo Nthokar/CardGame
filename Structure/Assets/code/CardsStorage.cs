@@ -1013,9 +1013,7 @@ namespace Assets.code
                     Description = "Отказаться",
                 }
             },
-        
-
-};
+        };
 
         private static List<Card> cards = storage.ToList();
 

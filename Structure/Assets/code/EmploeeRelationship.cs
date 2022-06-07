@@ -18,7 +18,8 @@
         {
             _value += x;
             if (_value > 10) _value = 10;
-            if (_value <= 0 || Player.OnLose != null) Player.OnLose.Invoke();
+            if (_value <= 0)
+                Player.OnLose.Invoke();
             CheckStatus();
         }
 
